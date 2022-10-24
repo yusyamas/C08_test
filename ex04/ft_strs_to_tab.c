@@ -6,11 +6,11 @@
 /*   By: yusyamas <yuppiy2000@icloud.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 15:00:33 by yusyamas          #+#    #+#             */
-/*   Updated: 2022/10/23 00:12:00 by yusyamas         ###   ########.fr       */
+/*   Updated: 2022/10/24 15:45:43 by yusyamas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_strs_to_tab.h"
+#include "ft_stock_str.h"
 #include <stdlib.h>
 #define FT_NULL '\0'
 
