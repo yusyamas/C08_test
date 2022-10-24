@@ -6,7 +6,7 @@
 /*   By: yusyamas <yuppiy2000@icloud.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 17:49:16 by yusyamas          #+#    #+#             */
-/*   Updated: 2022/10/24 16:02:42 by yusyamas         ###   ########.fr       */
+/*   Updated: 2022/10/24 17:29:53 by yusyamas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include <stdio.h>
 #include <unistd.h>
 #define FT_NULL '\0'
+
+struct s_stock_str	*ft_strs_to_tab(int ac, char **av);
 
 void	ft_putchar(char c)
 {

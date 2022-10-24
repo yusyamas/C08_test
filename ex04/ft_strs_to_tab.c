@@ -6,7 +6,7 @@
 /*   By: yusyamas <yuppiy2000@icloud.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 15:00:33 by yusyamas          #+#    #+#             */
-/*   Updated: 2022/10/24 15:45:43 by yusyamas         ###   ########.fr       */
+/*   Updated: 2022/10/25 00:11:13 by yusyamas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ struct s_stock_str	*ft_last_struct(struct s_stock_str *par)
 	par->copy = (char *)malloc(sizeof(char));
 	if (par->copy == NULL)
 		return (NULL);
-	ft_strcpy(par->str, "\0");
+	ft_strcpy(par->str, "");
 	ft_strcpy(par->copy, par->str);
 	return (par);
 }
@@ -85,6 +85,7 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 		{
 			if (ft_last_struct(container) == NULL)
 				return (NULL);
+			break ;
 		}
 		else
 		{
