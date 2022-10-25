@@ -6,7 +6,7 @@
 /*   By: yusyamas <yuppiy2000@icloud.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 15:00:33 by yusyamas          #+#    #+#             */
-/*   Updated: 2022/10/25 00:11:13 by yusyamas         ###   ########.fr       */
+/*   Updated: 2022/10/25 14:58:56 by yusyamas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@
 unsigned int	ft_strlen(char *str)
 {
 	unsigned int	length;
+	char			*c;
 
 	length = 0;
-	while (*str != FT_NULL)
+	c = str;
+	while (*c != FT_NULL)
 	{
 		length += 1;
-		str += 1;
+		c += 1;
 	}
 	return (length);
 }
@@ -30,13 +32,17 @@ unsigned int	ft_strlen(char *str)
 char	*ft_strcpy(char *dest, char *src)
 {
 	unsigned int	length;
+	char			*d;
+	char			*s;
 
 	length = ft_strlen(src) + 1;
+	d = dest;
+	s = src;
 	while (length > 0)
 	{
-		*dest = *src;
-		dest += 1;
-		src += 1;
+		*d = *s;
+		d += 1;
+		s += 1;
 		length -= 1;
 	}
 	return (dest);

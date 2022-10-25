@@ -6,7 +6,7 @@
 /*   By: yusyamas <yuppiy2000@icloud.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 17:49:16 by yusyamas          #+#    #+#             */
-/*   Updated: 2022/10/24 17:29:53 by yusyamas         ###   ########.fr       */
+/*   Updated: 2022/10/25 15:15:40 by yusyamas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,13 @@ void	ft_putchar(char c)
 
 void	ft_putstr(char *str)
 {
-	while (*str != FT_NULL)
+	char	*c;
+
+	c = str;
+	while (*c != FT_NULL)
 	{
-		ft_putchar(*str);
-		str += 1;
+		ft_putchar(*c);
+		c += 1;
 	}
 	ft_putchar('\n');
 }
