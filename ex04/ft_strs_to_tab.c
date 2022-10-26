@@ -6,11 +6,12 @@
 /*   By: yusyamas <yuppiy2000@icloud.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 15:00:33 by yusyamas          #+#    #+#             */
-/*   Updated: 2022/10/25 14:58:56 by yusyamas         ###   ########.fr       */
+/*   Updated: 2022/10/26 12:58:08 by yusyamas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stock_str.h"
+#include <stdio.h>
 #include <stdlib.h>
 #define FT_NULL '\0'
 
@@ -50,15 +51,10 @@ char	*ft_strcpy(char *dest, char *src)
 
 struct s_stock_str	*ft_last_struct(struct s_stock_str *par)
 {
-	par->size = 0;
 	par->str = (char *)malloc(sizeof(char));
 	if (par->str == NULL)
 		return (NULL);
-	par->copy = (char *)malloc(sizeof(char));
-	if (par->copy == NULL)
-		return (NULL);
 	ft_strcpy(par->str, "");
-	ft_strcpy(par->copy, par->str);
 	return (par);
 }
 

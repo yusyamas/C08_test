@@ -6,7 +6,7 @@
 /*   By: yusyamas <yuppiy2000@icloud.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 17:49:16 by yusyamas          #+#    #+#             */
-/*   Updated: 2022/10/25 15:15:40 by yusyamas         ###   ########.fr       */
+/*   Updated: 2022/10/26 13:01:27 by yusyamas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #define FT_NULL '\0'
 
 struct s_stock_str	*ft_strs_to_tab(int ac, char **av);
+
+unsigned int		ft_strlen(char *str);
 
 void	ft_putchar(char c)
 {
@@ -56,15 +58,12 @@ void	ft_show_tab(struct s_stock_str *par)
 	c = par;
 	while (1)
 	{
+		if (ft_strlen(c->str) == (unsigned int)0)
+			break ;
 		ft_putstr(c->str);
-		if (c->size == 0)
-			ft_putchar('0');
-		else
-			ft_print_digit(c->size);
+		ft_print_digit(c->size);
 		ft_putchar('\n');
 		ft_putstr(c->copy);
-		if (c->size == 0)
-			break ;
 		c += 1;
 	}
 }
