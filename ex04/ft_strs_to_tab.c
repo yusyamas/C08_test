@@ -6,7 +6,7 @@
 /*   By: yusyamas <yuppiy2000@icloud.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 15:00:33 by yusyamas          #+#    #+#             */
-/*   Updated: 2022/10/26 12:58:08 by yusyamas         ###   ########.fr       */
+/*   Updated: 2022/10/26 15:04:00 by yusyamas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,72 +30,46 @@ unsigned int	ft_strlen(char *str)
 	return (length);
 }
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_memcpy(char *dest, char *src, unsigned int len)
 {
-	unsigned int	length;
-	char			*d;
-	char			*s;
+	char	*c;
 
-	length = ft_strlen(src) + 1;
-	d = dest;
-	s = src;
-	while (length > 0)
+	c = dest;
+	while (len > 0)
 	{
-		*d = *s;
-		d += 1;
-		s += 1;
-		length -= 1;
+		*dest = *src;
+		dest += 1;
+		src += 1;
+		len -= 1;
 	}
-	return (dest);
+	return (c);
 }
 
-struct s_stock_str	*ft_last_struct(struct s_stock_str *par)
+char	*ft_strdup(char *src)
 {
-	par->str = (char *)malloc(sizeof(char));
-	if (par->str == NULL)
-		return (NULL);
-	ft_strcpy(par->str, "");
-	return (par);
-}
+	char			*dupstr;
+	unsigned int	srclen;
 
-struct s_stock_str	*ft_nonlast_struct(struct s_stock_str *par, char *s)
-{
-	par->size = ft_strlen(s);
-	par->str = (char *)malloc(sizeof(char) * (par->size + 1));
-	if (par->str == NULL)
-		return (NULL);
-	par->copy = (char *)malloc(sizeof(char) * (par->size + 1));
-	if (par->copy == NULL)
-		return (NULL);
-	ft_strcpy(par->str, s);
-	ft_strcpy(par->copy, par->str);
-	return (par);
+	srclen = ft_strlen(src);
+	dupstr = (char *)malloc(sizeof(char) * (srclen + 1));
+	ft_memcpy(dupstr, src, srclen + 1);
+	return (dupstr);
 }
 
 struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 {
 	t_stock_str	*container;
-	t_stock_str	*c;
 	int			i;
 
 	container = (t_stock_str *)malloc(sizeof(t_stock_str) * (ac + 1));
-	c = container;
 	i = 0;
-	while (i < ac + 1)
+	while (i < ac)
 	{
-		if (i == ac)
-		{
-			if (ft_last_struct(container) == NULL)
-				return (NULL);
-			break ;
-		}
-		else
-		{
-			if (ft_nonlast_struct(container, av[i]) == NULL)
-				return (NULL);
-		}
-		container += 1;
+		container[i].str = av[i];
+		container[i].size = (int)ft_strlen(av[i]);
+		container[i].copy = ft_strdup(av[i]);
 		i += 1;
 	}
-	return (c);
+	container[i].str = 0;
+	return (container);
 }

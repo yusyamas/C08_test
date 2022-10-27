@@ -6,7 +6,7 @@
 /*   By: yusyamas <yuppiy2000@icloud.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 17:49:16 by yusyamas          #+#    #+#             */
-/*   Updated: 2022/10/26 13:01:27 by yusyamas         ###   ########.fr       */
+/*   Updated: 2022/10/26 15:08:07 by yusyamas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	ft_show_tab(struct s_stock_str *par)
 	c = par;
 	while (1)
 	{
-		if (ft_strlen(c->str) == (unsigned int)0)
+		if (c->str == 0)
 			break ;
 		ft_putstr(c->str);
 		ft_print_digit(c->size);
